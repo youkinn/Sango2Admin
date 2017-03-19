@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 //Layouts
 import { FullLayoutComponent } from './layouts/full-layout.component';
+import { SimpleLayoutComponent } from './layouts/simple-layout.component';
 
 export const routes: Routes = [
   {
@@ -20,7 +21,33 @@ export const routes: Routes = [
       {
         path: 'dashboard',
         loadChildren: './dashboard/dashboard.module#DashboardModule'
-      },
+      }
+    ]
+  },
+  {
+    path: 'account',
+    component: SimpleLayoutComponent,
+    data: {
+      title: 'Account'
+    },
+    children: [
+      {
+        path: '',
+        loadChildren: './account/account.module#AccountModule',
+      }
+    ]
+  },
+  {
+    path: 'errors',
+    component: SimpleLayoutComponent,
+    data: {
+      title: 'Errors'
+    },
+    children: [
+      {
+        path: '',
+        loadChildren: './errors/errors.module#ErrorsModule',
+      }
     ]
   }
 ];

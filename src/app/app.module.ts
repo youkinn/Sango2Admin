@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
+import { HttpModule, JsonpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { DropdownModule } from 'ng2-bootstrap/dropdown';
@@ -17,6 +18,7 @@ import { AppRoutingModule } from './app.routing';
 
 //Layouts
 import { FullLayoutComponent } from './layouts/full-layout.component';
+import { SimpleLayoutComponent } from './layouts/simple-layout.component';
 
 @NgModule({
   imports: [
@@ -24,11 +26,14 @@ import { FullLayoutComponent } from './layouts/full-layout.component';
     AppRoutingModule,
     DropdownModule.forRoot(),
     TabsModule.forRoot(),
-    ChartsModule
+    ChartsModule,
+    HttpModule,
+    JsonpModule
   ],
   declarations: [
     AppComponent,
     FullLayoutComponent,
+    SimpleLayoutComponent,
     NAV_DROPDOWN_DIRECTIVES,
     BreadcrumbsComponent,
     SIDEBAR_TOGGLE_DIRECTIVES,
