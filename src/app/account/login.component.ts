@@ -1,31 +1,19 @@
 import { Component, OnInit } from '@angular/core';
-import { AccountService } from './login/login.service';
+import { LoginService } from './login/login.service';
 import { Account } from './account';
 
 @Component({
   templateUrl: 'login.component.html',
-  providers: [AccountService]
+  providers: [LoginService]
 })
 export class LoginComponent implements OnInit {
   errorMessage: string;
   users: Account[];
   mode = 'Observable';
 
-  constructor(private accountService: AccountService) { }
+  constructor(private accountService: LoginService) { }
 
   ngOnInit() {
-    debugger;
-    this.getUsers();
-  }
-
-  getUsers() {
-    debugger;
-    this.accountService.getHeroes()
-      .subscribe(
-      users => {
-        debugger;
-        this.users = users
-      },
-      error => this.errorMessage = <any>error);
+    // todo
   }
 }

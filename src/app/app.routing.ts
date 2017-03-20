@@ -25,6 +25,19 @@ export const routes: Routes = [
     ]
   },
   {
+    path: 'demo',
+    component: SimpleLayoutComponent,
+    data: {
+      title: 'Demo'
+    },
+    children: [
+      {
+        path: '',
+        loadChildren: './demo/demo.module#DemoModule',
+      }
+    ]
+  },
+  {
     path: 'account',
     component: SimpleLayoutComponent,
     data: {

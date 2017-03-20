@@ -7,7 +7,6 @@ var news = require('./modules/news');
 var game = require('./modules/game');
 
 router.use('/', function (req, res, next) {
-  debugger;
   if (req.session.user) {
     console.log(req.session.cookie._expires.toString());
   }
