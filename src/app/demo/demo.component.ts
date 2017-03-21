@@ -9,18 +9,31 @@ import { Account } from './account';
 export class DemoComponent implements OnInit {
   errorMessage: string;
   users: Account[];
+  roleName: string;
+  roleDesc: string;
+  parentID: 0;
   mode = 'Observable';
 
   constructor(private accountService: DemoService) { }
 
   ngOnInit() {
-    this.getUsers();
+    // this.getUsers();
+    this.addRole();
   }
 
   getUsers() {
     this.accountService.getHeroes()
       .subscribe(
       users => this.users = users,
+      error => this.errorMessage = <any>error);
+  }
+
+  addRole() {
+    this.accountService.addRole()
+      .subscribe(
+      (res) => {
+        debugger;
+      },
       error => this.errorMessage = <any>error);
   }
 }

@@ -29,4 +29,10 @@ export class DemoService {
         console.error(errMsg);
         return Observable.throw(errMsg);
     }
+
+    addRole(): Observable<Response> {
+        return this.http.post('http://localhost:9001/api/getRoleList', { roleName: '管理员', roleDesc: '后台系统的管理员', pid: 0 })
+            .map(this.extractData)
+            .catch(this.handleError);
+    }
 }
