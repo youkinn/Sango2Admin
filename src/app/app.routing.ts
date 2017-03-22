@@ -6,62 +6,30 @@ import { FullLayoutComponent } from './layouts/full-layout.component';
 import { SimpleLayoutComponent } from './layouts/simple-layout.component';
 
 export const routes: Routes = [
-  {
-    path: '',
-    redirectTo: 'dashboard',
-    pathMatch: 'full',
-  },
+  // { path: '', redirectTo: 'dashboard3', pathMatch: 'full' },
   {
     path: '',
     component: FullLayoutComponent,
-    data: {
-      title: 'Home'
-    },
-    children: [
-      {
-        path: 'dashboard',
-        loadChildren: './dashboard/dashboard.module#DashboardModule'
-      }
-    ]
+    data: { title: 'Home' },
+    children: [{ loadChildren: './dashboard/dashboard.module#DashboardModule', path: '' }]
   },
   {
     path: 'demo',
     component: SimpleLayoutComponent,
-    data: {
-      title: 'Demo'
-    },
-    children: [
-      {
-        path: '',
-        loadChildren: './demo/demo.module#DemoModule',
-      }
-    ]
+    data: { title: 'Demo' },
+    children: [{ loadChildren: './demo/demo.module#DemoModule', path: '' }]
   },
   {
     path: 'account',
     component: SimpleLayoutComponent,
-    data: {
-      title: 'Account'
-    },
-    children: [
-      {
-        path: '',
-        loadChildren: './account/account.module#AccountModule',
-      }
-    ]
+    data: { title: 'Account' },
+    children: [{ loadChildren: './account/account.module#AccountModule', path: '' }]
   },
   {
     path: 'errors',
     component: SimpleLayoutComponent,
-    data: {
-      title: 'Errors'
-    },
-    children: [
-      {
-        path: '',
-        loadChildren: './errors/errors.module#ErrorsModule',
-      }
-    ]
+    data: { title: 'Errors' },
+    children: [{ loadChildren: './errors/errors.module#ErrorsModule', path: '' }]
   }
 ];
 
